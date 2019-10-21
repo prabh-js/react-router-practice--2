@@ -9,6 +9,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import reducers from './reducers';
 import Posts from './components/Posts';
 import PostsNew from './components/PostsNew';
+import PostsShow from './components/PostsShow'
 
 const createStoreWithMiddleware = composeWithDevTools(applyMiddleware(ReduxPromise))(createStore);
 
@@ -18,6 +19,7 @@ ReactDOM.render(
       <Switch>
         <Route path="/" exact component={Posts} />
         <Route path="/posts/new" component={PostsNew} />
+        <Route path="/posts/:id" component={PostsShow} />
       </Switch>
     </BrowserRouter>
   </Provider>
